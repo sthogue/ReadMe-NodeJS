@@ -1,7 +1,10 @@
-// TODO: Include packages needed for this application
+//Required packages for application to run
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+
+// array of questions for users to enter
 const questions = [
     {
         type: 'input',
@@ -15,18 +18,18 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'project-title',
+        name: 'projectTitle',
         message: "What is your projects title"
     },
     {
         type: 'input',
-        name: 'Description',
-        message: "Provide a short description explaining the what, why , and how of your project"
+        name: 'description',
+        message: "Provide a short description explaining your project"
     },
     {
         type: 'input',
-        name: 'Install-instructions',
-        message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running."
+        name: 'installInstructions',
+        message: "What commands should I use to install dependencies?"
     },
     {
         type: 'input',
@@ -55,30 +58,40 @@ const questions = [
             'GNU Lesser General Public License v2.1',
             'MIT License',
             'Mozilla Public License 2.0',
-            'The Unlicense'
+            'The Unlicense',
+            'None',
         ],
-    },
-    {
-        type: 'input',
-        name: 'command',
-        message: "What commands should I use to install dependencies?"
     },
     {
         type: 'input',
         name: 'tests',
         message: "What commands should I use to run tests?"
     },
+    {
+        type: 'input',
+        name: 'URL',
+        message: "Please enter your project URL?"
+    },
 ];
 
-inquirer.prompt(questions).then((answers) => {
-    console.log(JSON.stringify(answers, null, '  '));
-  });
+// Writes the ReadME files
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, 'utf8', (err) =>
+    // If there is an error it will throw one, if not the console log is initiated
+    err ? console.error(err) : console.log('ReadMe file created!')
+    );
+}
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
+// Initializes the application
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            console.log('Generating ReadMe file');
+            console.log(answers)
+            return writeToFile('./New-ReadMe/README.md',generateMarkdown(answers));
+        })
+        .catch(err => console.log(err));
+};
+// Function call to initialize app
+init();
