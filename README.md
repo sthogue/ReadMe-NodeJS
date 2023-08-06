@@ -22,7 +22,7 @@ This application uses NPM, Node JS, and JavaScript to create a basic Professiona
 
 To install the program, run the following command:
 
-1. Make sure that you have Node JS installed. You can find the latest version of NodeJS [here]('https://nodejs.org/en').
+1. Make sure that you have Node JS installed. You can find the latest version of NodeJS [here](https://nodejs.org/en).
 2. Clone the starter code
 3. Create a `.gitignore` file. In the file, include the following `node_modules/` & `.DS_Store/` to ensure that your directory isn't tracked and uploaded to GitHub if you publish the code/file later. 
 4. Ensure you have a `package.json` file with all the required decencies. If you don't have the file run the integrated terminal and run `npm init`.
