@@ -16,6 +16,8 @@ This application uses NPM, Node JS, and JavaScript to create a basic Professiona
 
 * [Contributions](#contributions)
 
+* [Video](#Video)
+
 * [Questions](#questions)
 
 ## Installation
@@ -34,15 +36,12 @@ To install the program, run the following command:
 10. Open the new README file and add any pictures, additional links, and context you would like to include in your README file. 
 11. Move your new README file to your project's correct folder to ensure it's in the correct repo!
 
-
-
 ## Technologies Used
 - Javascript
 - Node JS
 - Package.json
 - NPM
 - Inquirer v8.2.4
-
 
 ## License
 
@@ -54,6 +53,8 @@ This application is covered under the MIT license.
 
 The EdX instructional team provided the starter code, specifically GitHub users [gachoi06 & Xandromus](https://github.com/coding-boot-camp/potential-enigma). The badge URLS and likeness were copied from GitHub user [lukas-h](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
+## Video
+[Link to video of the working application](https://drive.google.com/file/d/1eTCDLI31OSnd34rJmSpotW9xqDb_G5Ar/view?usp=share_link)
 
 ## Application URL
 [Link to application URL](https://github.com/sthogue/ReadMe-NodeJS)
